@@ -44,7 +44,7 @@
 
 
 
-})(document, "https://raw.githubusercontent.com/Schorny/rsRocker/master/");
+})(document, "https://rawgit.com/Schorny/rsRocker/master/");
 
 //bookmarklet code:
 //javascript:(function(){var e=document.createElement('script');e.src='http://localhost/code/rsRocker/rsrocker.js';document.body.appendChild(e);})();
