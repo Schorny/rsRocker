@@ -20,3 +20,24 @@
 #rsr .table caption {
     color: black;
 }
+
+.matchstats {
+    z-index:3001;
+}
+
+.compareregionstats {
+    font-size: 7px;
+    position:relative;
+    z-index:2001;
+}
+.compareregionstats th {
+    text-align:right;
+}
+
+.compareregionstats td {
+    text-align:left;
+}
+
+.field-inner {
+    text-align:center;
+}
