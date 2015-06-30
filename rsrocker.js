@@ -88,8 +88,8 @@
 
 
 
-//})(document, "http://rawgit.com/Schorny/rsRocker/master/");
-})(document, "http://localhost/code/rsRocker/");
+})(document, "http://rawgit.com/Schorny/rsRocker/v2/");
+//})(document, "http://localhost/code/rsRocker/");
 
 
 //bookmarklet code:
