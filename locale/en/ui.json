@@ -3,5 +3,10 @@
   "playerinfo": "Player Info",
   "playerid": "Player ID",
   "matchlog": "Match Log",
+  "matchregioninfo": "Match Region Info",
+  "fontcolor": "Font Color",
+  "enable": "Enable",
+  "disable": "Disable",
+  "update": "Update",
   "go": "Go"
 }
