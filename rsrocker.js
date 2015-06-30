@@ -65,26 +65,25 @@
         });
     }
 
-    function test() {
-
-    }
 
     $.when(initDependencies(baseUrl)).done(function() {
 
         var menu = new rsR.ui.MainMenu();
 
-        rsR.match.handleMatch();
-        return;
+        if($('#regions').length) {
+            rsR.match.handleMatch();
+        } else if($('.money-positive').length) {
+            var parts=location.href.split("-");
+            if(parts.length!=2) {
+                console.log("parts is not 2");
+                return;
+            }
 
-        var parts=location.href.split("-");
-        if(parts.length!=2) {
-            console.log("parts is not 2");
-            return;
+            var playerid = parts[1];
+            handlePlayerInfo(playerid);
         }
 
-        var playerid = parts[1];
-        handlePlayerInfo(playerid);
-
+        return;
     });
 
 
