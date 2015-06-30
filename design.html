@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/ui.css" />
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script>
+        $(function() {
+            $('#foo').draggable({
+                handle: '.rsrframeheader'
+            });
+            $('#foo').resizable();
+
+            $('.ui-resizable-handle').on("dblclick", function(e) {
+                console.log("auto resize");
+                $(this).parent().css({
+                    width: "auto",
+                    height: "auto"
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<span class="rsrframe" id="foo">
+    <div class="rsrframeheader">player</div>
+    <div class="rsrframecontent">
+        <table class="rsrplayerinfo table">
+            <caption>Frank Lenz</caption>
+            <tr>
+                <th>Scoring:</th>
+                <td>5.03</td>
+            </tr>
+
+            <tr>
+                <th>Passing:</th>
+                <td>1.71</td>
+            </tr>
+
+
+            <tr>
+                <th>Dueling:</th>
+                <td>0.43</td>
+            </tr>
+
+            <tr>
+                <th>Blocking:</th>
+                <td>0.21</td>
+            </tr>
+
+        </table>
+    </div>
+</span>
+</body>
+</html>

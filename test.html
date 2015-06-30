@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+
+    <link type="text/css" href="css/ui.css" rel="stylesheet" />
+
+    <script>
+        $(function() {
+            var Outer = Backbone.View.extend({
+                events: {
+                    'close': 'close'
+                },
+
+                initialize: function(options) {
+                    _.bindAll(this, 'render', 'close');
+
+                    this.content = options.content;
+
+                    this.render();
+                },
+
+                _getTemplate: function() {
+                    return '<div><span>Content</span><div class="rsrframecontent"></div></div>';
+                },
+
+                render: function() {
+                    this.el = $(this._getTemplate()).appendTo($('body'));
+                    this.$el = $(this.el);
+                    this.$el.find(".rsrframecontent").append(this.content.$el);
+                    return this;
+                },
+
+                close: function() {
+                    console.log("closed");
+                    this.$el.remove();
+                    this.remove();
+                }
+            });
+
+            var Inner = Backbone.View.extend({
+                events: {
+                    'click .submit': 'submit'
+                },
+
+                initialize: function() {
+                    _.bindAll(this, 'render', 'submit');
+
+                    this.render();
+                },
+
+                _getTemplate: function() {
+                    return '<div><input type="button" class="submit" value="close"></div>';
+                },
+
+                render: function() {
+                    this.$el = $(this._getTemplate());
+                    return this;
+                },
+
+                submit: function(e) {
+                    console.log("Inner triggers close");
+                    this.$el.trigger("close");
+                }
+            });
+
+            new Outer({content: new Inner()});
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

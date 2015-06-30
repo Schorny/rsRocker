@@ -1,0 +1,45 @@
+
+<table class="rsrplayerinfo">
+    <caption>{{ name }}</caption>
+    <tr>
+        <th>{{t "skills:scoring"}}:</th>
+        <td>{{ scoring }}</td>
+    </tr>
+
+    <tr>
+        <th>{{t "skills:passing"}}:</th>
+        <td>{{ passing }}</td>
+    </tr>
+
+
+    <tr>
+        <th>{{t "skills:dueling"}}:</th>
+        <td>{{ dueling }}</td>
+    </tr>
+
+    <tr>
+        <th>{{t "skills:blocking"}}:</th>
+        <td>{{ blocking }}</td>
+    </tr>
+
+    {{#if youthbonus}}
+        <tr>
+            <th>{{t "skills:youthbonus"}}:</th>
+            <td>{{ youthbonus }}</td>
+        </tr>
+    {{/if}}
+
+    {{#if specials}}
+        <tr>
+            <th>{{t "skills:specialattributes"}}:</th>
+            <td>
+                <ul>
+                    {{#each specials}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </td>
+        </tr>
+    {{/if}}
+
+</table>

@@ -1,0 +1,126 @@
+#rsr {
+    position:absolute;
+    top: 0;
+    width:100%;
+    font-family: sans-serif;
+    z-index: 99999;
+}
+
+#rsrmenu {
+    position:absolute;
+    margin: auto;
+    width: auto;
+    text-align:center;
+    left:0;
+    right:0;
+    top:0;
+}
+
+.rsrmenuheader{
+    text-align:center;
+    font-size:18px;
+}
+
+#rsrmenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px;
+}
+
+#rsrmenu li {
+    display: inline-block;
+}
+
+#rsrmenu li a {
+    display: block;
+    width: 80px;
+    background: #0a7a00;
+    background-image: -webkit-linear-gradient(top, #0a7a00, #00451e);
+    background-image: -moz-linear-gradient(top, #0a7a00, #00451e);
+    background-image: -ms-linear-gradient(top, #0a7a00, #00451e);
+    background-image: -o-linear-gradient(top, #0a7a00, #00451e);
+    background-image: linear-gradient(to bottom, #0a7a00, #00451e);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 12px;
+    text-align:center;
+    text-decoration: none;
+}
+#rsrmenu li a:hover {
+    background: #0c9100;
+    text-decoration: none;
+}
+
+.rsrframe {
+    position:absolute !important;
+    top: 70px;
+    left: 45%;
+    background-color: #ccc;
+    border-radius: 27px 27px 8px 8px;
+    -moz-border-radius: 27px 27px 8px 8px;
+    -webkit-border-radius: 27px 27px 8px 8px;
+    border: 1px solid #000000;
+    overflow: hidden;
+    display:inline-block;
+}
+
+.rsrframeheader {
+    background-color: #7b7b7b;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 1.7em;
+    cursor: move;
+}
+
+.rsrframeclose {
+    height: 1em;
+    width: 1em;
+    position:absolute;
+    border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    top: 5px;
+    right: 15px;
+    background-color:white;
+    cursor:pointer;
+    font-size: 1em;
+}
+
+.rsrframeclose::before {
+    content: "X";
+    padding-left: 2px;
+    font-family: sans-serif;
+    width: 1em;
+    height: 1em;
+
+}
+
+.rsrframecontent {
+    margin: 7px;
+    display:block;
+}
+
+.rsraskplayerid label {
+    display: block;
+    text-align: center;
+}
+
+.rsrlabel {
+    font-weight: bold;
+}
+
+.rsrsubmit {
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+.rsrplayerinfo ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}

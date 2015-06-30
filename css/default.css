@@ -1,0 +1,22 @@
+
+#rsr table {
+    width: 100%;
+    max-width: 100%;
+}
+
+#rsr th {
+    text-align: left;
+}
+
+#rsr td {
+    text-align: left;
+}
+
+#rsr caption {
+    text-align: center;
+    font-weight: bold;
+}
+
+#rsr .table caption {
+    color: black;
+}

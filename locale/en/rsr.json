@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "rsRocker"
+  },
+  "menu": {
+    "playerinfo": "Player Info",
+    "matchinfo": "Match Info",
+    "help": "Help"
+  }
+}
