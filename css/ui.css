@@ -124,3 +124,8 @@
     margin:0;
     padding:0;
 }
+
+.rsrmatchlog .logarea {
+    font-family: Consolas, monospace;
+    white-space: pre;
+}
