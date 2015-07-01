@@ -129,3 +129,15 @@
     font-family: Consolas, monospace;
     white-space: pre;
 }
+
+.rsrteam_home {
+    color: blue;
+}
+
+.rsrteam_away {
+    color: #d124ff;
+}
+
+.rsranalysetactic legend {
+    display: inline;
+}

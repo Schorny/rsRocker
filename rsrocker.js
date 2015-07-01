@@ -6,16 +6,17 @@
         function loadCss(url) {
             $('<link rel="stylesheet" type="text/css" href="'+url+'" />').appendTo($('head'));
         }
-
         $('<span id="rsr"></span>').appendTo($('body'));
         $('<img src="'+baseUrl+'img/spinner.gif'+'" style="position:absolute;top:0;left:47%;" id="rsrspinner"/>').appendTo($('body'));
         loadCss(baseUrl+'css/default.css');
         loadCss(baseUrl+'css/ui.css');
         loadCss('https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css');
         //loadCss('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css');
+        var dummyResolver = $.Deferred();
+        dummyResolver.resolve();
         $.when(
             $.getScript('https://cdn.jsdelivr.net/i18next/1.7.7/i18next.min.js'),
-            $.getScript('https://code.jquery.com/ui/1.11.3/jquery-ui.min.js'),
+            $.ui ? dummyResolver : $.getScript('https://code.jquery.com/ui/1.11.3/jquery-ui.min.js'),
             $.getScript('https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js'),
             $.getScript('http://underscorejs.org/underscore-min.js'),
             $.getScript(baseUrl+'config.js'),
@@ -24,7 +25,8 @@
             $.getScript(baseUrl+'lib/loader.js'),
             $.getScript(baseUrl+'lib/player.js'),
             $.getScript(baseUrl+'lib/match.js'),
-            $.getScript(baseUrl+'lib/matchevents.js')
+            $.getScript(baseUrl+'lib/matchevents.js'),
+            $.getScript(baseUrl+'lib/analyse.js')
         ).done(function() {
             $.when($.getScript('https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js')).done(function() {
                 rsR.config.baseUrl = baseUrl;
@@ -69,9 +71,10 @@
     $.when(initDependencies(baseUrl)).done(function() {
 
         var menu = new rsR.ui.MainMenu();
-
         if($('#regions').length) {
             rsR.match.handleMatch();
+        } else if($('.analyse_form').length) {
+            rsR.analyse.handleAnalyse();
         } else if($('.money-positive').length) {
             var parts=location.href.split("-");
             if(parts.length!=2) {

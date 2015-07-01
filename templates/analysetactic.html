@@ -1,0 +1,38 @@
+<div class="rsranalysetactic">
+    <table border="0" width="100%">
+        <tr>
+            <td>
+                {{t "ui:playerregion" }}:
+                <select class="playerregion">
+                    {{#each regions}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+                <label>{{t "ui:extended"}}: <input type="checkbox" class="playerregion" checked="checked"></label>
+                <a href="#" class="playerregion">{{t "ui:go"}}</a>
+            </td>
+        </tr>
+    </table>
+    <table border="0" class="rsrplayertable">
+        <tr class="rsrfirst">
+            <th>{{t "ui:playername"}}</th>
+            <th>{{t "ui:playerposition" }}</th>
+            <th>{{t "skills:blocking" }}</th>
+            <th>{{t "skills:dueling" }}</th>
+            <th>{{t "skills:passing" }}</th>
+            <th>{{t "skills:scoring" }}</th>
+            <th>{{t "skills:tactic" }}</th>
+        </tr>
+        {{#each players}}
+            <tr class="rsrteam_{{this.team}} position_{{this.position}}">
+                <td>{{this.name}}</td>
+                <td>{{this.position}}</td>
+                <td>{{this.blocking}}</td>
+                <td>{{this.dueling}}</td>
+                <td>{{this.passing}}</td>
+                <td>{{this.scoring}}</td>
+                <td>{{this.tactic}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>
